@@ -1,13 +1,3 @@
-<head>
-  <title>marketcontrol</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-<body>
-  <main id="content">    
-  </main>
-</body>
-
 <template name="layout">
   <nav>
     <div class="nav-wrapper">
@@ -48,30 +38,4 @@
       </div>
     </div>
   </footer>
-</template>
-
-<template name="ProductAdd">
-  <h2>Adicionar produto</h2>
-  {{> quickForm id="productAddForm" collection="Products" type="insert"}}
-</template>
-
-<template name="ProductSearch">
-  <h2>Pesquisar produto</h2>
-  {{> esInput index="products" placeholder="Nome..."}}
-
-  <ul class="collection">
-    {{#esEach index="products"}}
-      <li class="collection-item product-listed">{{name}}. 
-        <ul class="collection">
-          {{#each prices}}
-            <li class="collection-item">{{market}} 
-              <span class="badge">
-                R$ {{price}}
-              </span>
-            </li>
-          {{/each}}
-        </ul>
-      </li>
-    {{/esEach}}
-  </ul>
 </template>
