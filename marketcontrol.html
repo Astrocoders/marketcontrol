@@ -1,0 +1,77 @@
+<head>
+  <title>marketcontrol</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <main id="content">    
+  </main>
+</body>
+
+<template name="layout">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">marketcontrol</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">Procurar</a></li>
+        <li><a href="/add">Adicionar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    {{> Template.dynamic template=main}}
+  </div>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">marketcontrol</h5>
+          <p class="grey-text text-lighten-4">Economize colaborativamente.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+<!--           <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+          </ul> -->
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2015 Gabriel Rubens
+      <a class="grey-text text-lighten-4 right" href="https://twitter.com/_gabrielrubens">Twitter</a>
+      </div>
+    </div>
+  </footer>
+</template>
+
+<template name="ProductAdd">
+  <h2>Adicionar produto</h2>
+  {{> quickForm id="productAddForm" collection="Products" type="insert"}}
+</template>
+
+<template name="ProductSearch">
+  <h2>Pesquisar produto</h2>
+  {{> esInput index="products" placeholder="Nome..."}}
+
+  <ul class="collection">
+    {{#esEach index="products"}}
+      <li class="collection-item product-listed">{{name}}. 
+        <ul class="collection">
+          {{#each prices}}
+            <li class="collection-item">{{market}} 
+              <span class="badge">
+                R$ {{price}}
+              </span>
+            </li>
+          {{/each}}
+        </ul>
+      </li>
+    {{/esEach}}
+  </ul>
+</template>
