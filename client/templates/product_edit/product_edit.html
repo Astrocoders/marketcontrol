@@ -1,0 +1,11 @@
+<template name="ProductEdit">
+{{#contentFor "headerTitle"}}
+  <h1 class="title">Editar produto</h1>
+{{/contentFor}}
+
+{{#ionView}}
+  {{#ionContent}}
+    {{> quickForm id="productAddForm" collection="Products" type="edit" doc=product}}
+  {{/ionContent}}
+{{/ionView}}
+</template>

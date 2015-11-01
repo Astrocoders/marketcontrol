@@ -1,20 +1,41 @@
 <template name="ProductSearch">
-  <h2>Pesquisar produto</h2>
-  {{> esInput index="products" placeholder="Nome..."}}
+{{#contentFor "headerButtonRight"}}
+  <button type="button" class="button button-clear">
+    Novo
+  </button>
+{{/contentFor}}
 
-  <ul class="collection">
-    {{#esEach index="products"}}
-      <li class="collection-item product-listed">{{name}}. 
-        <ul class="collection">
-          {{#each prices}}
-            <li class="collection-item">{{market}} 
-              <span class="badge">
-                R$ {{price}}
-              </span>
-            </li>
-          {{/each}}
-        </ul>
-      </li>
-    {{/esEach}}
-  </ul>
+{{#contentFor "headerTitle"}}
+  <h1 class="title">Pesquisar produto</h1>
+{{/contentFor}}
+
+{{#ionView}}
+  {{#ionContent}}
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        {{> esInput index="products" placeholder="Produto..."}}
+      </label>
+    </div>
+
+    {{#ionList}}
+      {{#esEach index="products"}}
+        {{#ionItem}}
+          {{name}}.
+
+          {{#ionList}}
+            {{#each prices}}
+              {{#ionItem}}
+                {{market}}
+                <span class="badge">
+                  R$ {{price}}
+                </span>
+              {{/ionItem}}
+            {{/each}}
+          {{/ionList}}
+        {{/ionItem}}
+      {{/esEach}}
+    {{/ionList}}
+  {{/ionContent}}
+{{/ionView}}
 </template>

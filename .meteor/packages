@@ -18,9 +18,16 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
-gildaspk:autoform-materialize
 matteodem:easy-search
 aldeed:collection2
-materialize:materialize@=0.97.0
-kadira:flow-router
-kadira:blaze-layout
+aldeed:autoform@=4.2.2
+
+# meteoric
+iron:router
+fourseven:scss
+meteoric:ionic-sass
+meteoric:ionicons-sass
+meteoric:ionic
+meteoric:autoform-ionic
+astrocoders:publish
+ongoworks:security
