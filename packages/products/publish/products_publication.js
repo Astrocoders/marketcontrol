@@ -1,0 +1,1 @@
+Products.publish('products').apply();

@@ -1,0 +1,31 @@
+<template name="ProductSearchModal">
+  {{#ionModal title="Procurar produto"}}
+    <div class="padding">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          {{> esInput index="products" placeholder="Produto..."}}
+        </label>
+      </div>
+
+    {{#ionList}}
+      {{#esEach index="products"}}
+        {{#ionItem}}
+          {{name}}.
+
+          {{#ionList}}
+            {{#each prices}}
+              {{#ionItem}}
+                {{market}}
+                <span class="badge">
+                  R$ {{price}}
+                </span>
+              {{/ionItem}}
+            {{/each}}
+          {{/ionList}}
+        {{/ionItem}}
+      {{/esEach}}
+    {{/ionList}}
+    </div>
+  {{/ionModal}}
+</template>

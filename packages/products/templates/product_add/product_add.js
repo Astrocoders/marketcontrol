@@ -3,7 +3,12 @@ Template.ProductAdd.events({
 		Barcode.scan(function(result){
 			$('[data-schema-key=barcode]').val(result.text);
 		}, function(error){
-			console.log(error);		
+			console.log(error);
 		});
-	}
+	},
+});
+
+Template.ProductAdd.onCreated(function(){
+	IonLoading.show();
+	this.subscribe('markets', () => IonLoading.hide());
 });

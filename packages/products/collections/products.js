@@ -2,9 +2,20 @@ Products = new Mongo.Collection('products');
 
 let PricesSchema = new SimpleSchema({
   market: {
-    type: String,
-    label: 'Supermercado'
+    type: SimpleSchema.RegEx.Id,
+    label: 'Supermercado',
+    autoform: {
+      options: function(){
+        return Markets.find().map(function(market){
+          return {
+            label: market.name,
+            value: market._id
+          };
+        });
+      },
+    }
   },
+
   price: {
     type: Number,
     decimal: true,
