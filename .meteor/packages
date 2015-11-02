@@ -30,6 +30,7 @@ astrocoders:publish
 ongoworks:security
 
 # components
+app:seed
 app:markets
 app:products
 app:lists
