@@ -1,0 +1,33 @@
+<template name="ListEdit">
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">{{list.name}}</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button type="button" class="button button clear">
+      R$ {{list.amount}}
+    </button>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#ionList}}
+        {{#each list.products}}
+          {{#ionItem class="item-button-right"}}
+            {{name}}
+
+            <button class="button button-product-qty button-positive">
+              {{quantity}}
+            </button>
+          {{/ionItem}}
+        {{/each}}
+      {{/ionList}}
+    {{/ionContent}}
+
+    {{#ionFooterBar class="bar-dark"}}
+      <div class="title" id="scan-product">
+        Escanear {{> ionIcon icon="qr-scanner"}}
+      </div>
+    {{/ionFooterBar}}
+  {{/ionView}}
+</template>

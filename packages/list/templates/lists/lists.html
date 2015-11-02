@@ -1,0 +1,25 @@
+<template name="ListsView">
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Listas</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#ionList}}
+        {{#momentum plugin="growl"}}
+          {{#each lists}}
+              <div class="item item-icon-left list-item">
+                <i class="icon ion-trash-b delete-list"></i>
+
+                {{name}}
+
+                <span class="item-note">
+                  {{fromNow createdAt}}
+                </span>
+              </div>
+          {{/each}}
+        {{/momentum}}
+      {{/ionList}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>

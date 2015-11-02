@@ -1,0 +1,28 @@
+<template name="ListAdd">
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Nova lista</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#autoForm id="listAdd" collection="Lists" type="insert"}}
+        {{#ionList}}
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Nome</span>
+            {{> afFieldInput
+              name="name"
+              placeholder="Besteirinhas/Compra do mês..."}}
+          </label>
+
+          {{> afQuickField
+            name="market"
+            options=markets}}
+
+          <div class="padding">
+            <button type="submit" class="button button-positive button-block">Ok</button>
+          </div>
+        {{/ionList}}
+      {{/autoForm}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>

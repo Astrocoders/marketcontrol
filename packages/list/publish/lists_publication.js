@@ -1,0 +1,1 @@
+Lists.publish('lists').apply();

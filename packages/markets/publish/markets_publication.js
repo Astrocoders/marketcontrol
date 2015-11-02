@@ -1,0 +1,1 @@
+Markets.publish('markets').apply();
